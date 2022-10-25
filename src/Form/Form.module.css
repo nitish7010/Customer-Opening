@@ -1,0 +1,541 @@
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(226, 238, 255);
+}
+
+.colClass {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(141, 194, 234, 0.712);
+  border-bottom: 1px solid white;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  margin-left: 40px;
+}
+
+.navBar {
+  width: 100%;
+  height: 45px;
+  background-color: #cfdde8;
+  padding-top: 1%;
+}
+
+.navBar ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0%;
+  margin-left: 3%;
+}
+
+.navBar li {
+  margin-right: 2%;
+}
+
+.firstRow {
+  display: flex;
+}
+
+.headerDetail {
+  width: 70%;
+  height: 135px;
+  background-color: rgb(247, 249, 251);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+  margin-top: 10px;
+  margin-left: 7px;
+  display: inline-block;
+}
+
+.headerDetailHeader {
+  width: 100%;
+  height: 18px;
+  background-color: rgba(176, 212, 240, 0.712);
+  padding: 7px 0;
+}
+
+.headerDetailHeader p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  /* padding: 5px 0; */
+}
+
+.inputDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  padding-left: 2%;
+  padding-top: 1%;
+}
+
+input {
+  margin-left: 10px;
+}
+
+.inputLabel {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.headerBody {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+}
+.headerBody input {
+  width: 50px;
+}
+
+.attechment {
+  width: 25%;
+  height: 100px;
+  background-color: rgb(247, 249, 251);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 1.5px;
+}
+
+.attechmentHeader {
+  width: 100%;
+  height: 18px;
+  padding: 7px 0;
+  background-color: rgba(176, 212, 240, 0.712);
+  /* padding: 7px 0; */
+}
+
+.attechmentHeader p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  /* padding: 5px 0; */
+  padding-left: 10px;
+}
+
+.btnAttechment{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+.btnAttechment button{
+    background-color: #E3F48E;
+    border: 0.3px solid black;
+    border-radius: 2px;
+    height: 27px;
+    letter-spacing: 1.2px;
+}
+
+.addressDiv {
+  width: 95.2%;
+  height: 280px;
+  background-color: rgb(247, 249, 251);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+  margin-left: 7px;
+  margin-top: 10px;
+}
+
+.addressDivHeader {
+  width: 100%;
+  height: 18px;
+  padding: 7px 0;
+  background-color: rgba(176, 212, 240, 0.712);
+}
+
+.addressDivHeader p {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  text-align: left;
+  /* padding: 5px 0; */
+}
+
+.addressinputDiv{
+    display: flex;
+    width: 95%;
+    padding-left: 2%;
+    padding-top: 1%;
+}
+
+.addressBody{
+    width: 25%;
+    margin-right: 20%;
+}
+
+.addInput{
+    width: 20px;
+    margin-left: 50px;
+}
+
+/* .addressBody input{
+    width: 50%;
+} */
+
+.communication {
+  width: 95.2%;
+  height: 160px;
+  background-color: rgb(247, 249, 251);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+  margin-left: 7px;
+  margin-top: 10px;
+}
+
+.communicationHeader {
+  width: 100%;
+  height: 18px;
+  padding: 7px 0;
+  background-color: rgba(176, 212, 240, 0.712);
+}
+
+.communicationHeader p {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  text-align: left;
+  /* padding: 5px 0; */
+}
+
+.commInput{
+    text-align: left;
+    display: inline-block;
+    width: 48%;
+    padding-left: 0.8%;
+    padding-top: 1%;
+}
+
+.commInput div{
+    display: flex;
+    margin-bottom: 2px;
+}
+
+.commInput label{
+    width: 100px;
+}
+
+.commInput input{
+    width: 60%;
+}
+
+.email{
+    width: 60%;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.email input{
+    width: 70%;
+}
+
+.controlData {
+  width: 95.2%;
+  height: 85px;
+  background-color: rgb(247, 249, 251);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+  margin-left: 7px;
+  margin-top: 10px;
+}
+
+.controlDataHeader {
+  width: 100%;
+  height: 18px;
+  padding: 7px 0;
+  background-color: rgba(176, 212, 240, 0.712);
+}
+
+.controlDataHeader p {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  text-align: left;
+  /* padding: 5px 0; */
+}
+
+.controlInput{
+    display: flex;
+    justify-content: space-around;
+
+}
+hr{
+    width: 95%;
+}
+
+.marketing {
+  width: 95.2%;
+  height: 225px;
+  background-color: rgb(247, 249, 251);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+  margin-left: 7px;
+  margin-top: 10px;
+}
+
+.marketingHeader {
+  width: 100%;
+  height: 18px;
+  padding: 7px 0;
+  background-color: rgba(176, 212, 240, 0.712);
+}
+
+.marketingHeader p {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  /* text-align: left; */
+  /* padding: 5px 0; */
+  text-align: left;
+}
+
+.marketInput{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    text-align: left;
+    flex-wrap: wrap;
+    width: 95%;
+    padding-left: 2%;
+    padding-top: 1%;
+}
+
+.marketInput label{
+    width: 200px;
+}
+
+.marketInput div{
+    width: 50%;
+    display: flex;
+    margin-bottom: 2px;
+}
+
+.marketInput input{
+    /* width: 50px; */
+}
+
+
+.billing {
+  width: 95.2%;
+  height: 125px;
+  background-color: rgb(247, 249, 251);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+  margin-left: 7px;
+  margin-top: 10px;
+}
+
+.billingHeader {
+  width: 100%;
+  height: 18px;
+  padding: 7px 0;
+  background-color: rgba(176, 212, 240, 0.712);
+}
+
+.billingHeader p {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  text-align: left;
+  /* padding: 5px 0; */
+}
+
+.billingInput{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    text-align: left;
+    flex-wrap: wrap;
+    width: 95%;
+    padding-left: 2%;
+    padding-top: 1%;
+}
+
+.billingInput label{
+    width: 200px;
+}
+
+.billingInput div{
+    width: 50%;
+    display: flex;
+    margin-bottom: 2px;
+}
+
+
+.credit {
+  width: 95.2%;
+  height: 100px;
+  background-color: rgb(247, 249, 251);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+  margin-left: 7px;
+  margin-top: 10px;
+}
+
+.creditHeader {
+  width: 100%;
+  height: 18px;
+  padding: 7px 0;
+  background-color: rgba(176, 212, 240, 0.712);
+}
+
+.creditHeader p {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  text-align: left;
+  /* padding: 5px 0; */
+}
+
+.creditInput{
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    padding-left: 2%;
+}
+
+.pancard {
+  width: 95.2%;
+  height: 100px;
+  background-color: rgb(247, 249, 251);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+  margin-left: 7px;
+  margin-top: 10px;
+}
+
+.pancardHeader {
+  width: 100%;
+  height: 18px;
+  padding: 7px 0;
+  background-color: rgba(176, 212, 240, 0.712);
+}
+
+.pancardHeader p {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  text-align: left;
+  /* padding: 5px 0; */
+}
+
+.panInput{
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    padding-left: 2%;
+}
+
+.company {
+  width: 95.2%;
+  height: 280px;
+  background-color: rgb(247, 249, 251);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+  margin-left: 7px;
+  margin-top: 10px;
+}
+
+.companyHeader {
+  width: 100%;
+  height: 18px;
+  padding: 7px 0;
+  background-color: rgba(176, 212, 240, 0.712);
+}
+
+.companyHeader p {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  text-align: left;
+  /* padding: 5px 0; */
+}
+
+.companyInput{
+    display: flex;
+    padding: 10px;
+    padding-left: 2%;
+}
+
+.companyInput div{
+    width: 50%;
+    text-align: left;
+}
+
+.withHolding{
+    width: 50%;
+    height: 150px;
+    background-color: rgb(247, 249, 251);
+    border: 1px solid rgba(141, 194, 234, 0.712);
+    margin-left: 7px;
+    margin-top: 10px;
+}
+
+.witHoldingHeader{
+    width: 100%;
+    height: 18px;
+    padding: 7px 0;
+    background-color: rgba(176, 212, 240, 0.712);
+    text-align: left;
+}
+
+.table{
+    overflow: scroll;
+    width: 70%;
+    height: 60%;
+    padding-left: 2%;
+}
+
+ table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow: scroll;
+}
+
+ tr th{
+    border: 1px solid black;
+    background-color: #D4D4D4;
+}
+
+td{
+    border: 1px solid black;
+}
+
+input{
+    background-color: inherit;
+    border: 1px solid rgb(13, 60, 125);
+    border-radius: 3px;
+    height: 22px;
+}
+
+root {
+  --lighterBlue: rgb(247, 249, 251);
+  --lightBlue: rgb(226, 238, 255);
+  --darkBlue: rgba(141, 194, 234, 0.712);
+  --darkerBlue: rgba(85, 139, 216, 0.3);
+  --darkestBlue: rgb(13, 60, 125);
+  --mediumgrey: #c4c4c5;
+  --fieldBorder: 2px inset var(--mediumgrey);
+  --fieldBorderBottom: 1px solid var(--mediumgrey);
+  --sectionBorder: 1px solid var(--darkerBlue);
+  --yellowButton: linear-gradient(
+    rgb(249, 249, 210) 0%,
+    rgb(255, 255, 122) 100%
+  );
+  --yellowButtonClicked: linear-gradient(
+    rgb(255, 255, 122) 0%,
+    rgba(211, 209, 209, 0.807) 100%
+  );
+  --yellowButtonDisabled: linear-gradient(
+    rgba(249, 249, 210, 0.5) 0%,
+    rgba(255, 255, 122, 0.5) 8%,
+    rgba(255, 255, 122, 0.5) 100%
+  );
+  --buttonBorder: 1px solid black;
+  --borderRadiusButton: 2.5px;
+  --borderRadiusTable: 2.5px 2.5px 0px 0px;
+  --borderRadiusSection: 2px 2px 0px 0px;
+}

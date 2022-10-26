@@ -1,0 +1,98 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modalMain{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    background-color: white;
+    width: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 8px;
+}
+
+.historyHeader{
+    height: 10%;
+    background-color: #31529D;
+    border: 1px solid rgba(141, 194, 234, 0.712);
+    text-align: left;
+    padding-left: 8px;
+    padding-top: 5px;
+    display: flex;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.historyHeader img{
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+
+}
+
+.table{
+    margin-top: 8px;
+    margin-left: 5px;
+    background-color: rgba(176, 212, 240, 0.712);
+    border: 1px solid rgba(141, 194, 234, 0.712);
+    margin-bottom: 15px;
+}
+
+.tableHeader{
+    text-align: left;
+    font-weight: 600;
+    padding-left: 5px;
+    background-color: rgba(176, 212, 240, 0.712);
+    border: 1px solid rgba(141, 194, 234, 0.712);
+}
+
+table{
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+.tableContainer{
+    
+    height: 170px;
+    overflow: scroll;
+}
+
+.back{
+    width: 110px;
+    height: 30px;
+    margin-bottom: 15px;
+    background-color: #E3F48E;
+    border: 0.3px solid black;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.btns{
+    width: 95%;
+    text-align: left;
+    padding-left: 2%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btns button{
+    /* width: 30px;
+    height: 20px; */
+    border: 0.2px solid black;
+    border-radius: 2px;
+    margin-right: 5px;
+    background-color: #E3F48E;
+}
+
+.btns img{
+    width: 20px;
+}

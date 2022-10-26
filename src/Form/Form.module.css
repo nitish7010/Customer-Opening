@@ -39,8 +39,16 @@
   margin-left: 3%;
 }
 
+.history{
+    cursor: pointer;
+}
+
 .navBar li {
   margin-right: 2%;
+  display: flex;
+}
+ul img{
+    width: 20px;
 }
 
 .firstRow {
@@ -135,7 +143,7 @@ input {
     border: 0.3px solid black;
     border-radius: 2px;
     height: 27px;
-    letter-spacing: 1.2px;
+    letter-spacing: 0.8px;
 }
 
 .addressDiv {

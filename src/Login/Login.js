@@ -17,6 +17,7 @@ function Login() {
             const res = await instance({method:"POST",url:"/api/approval",data:form})
             console.log(res)
             if(res.status === 200){
+                localStorage.setItem("auth",JSON.stringify(res.data.data?.token))
                 navigate("/form")
             }
         } catch (error) {

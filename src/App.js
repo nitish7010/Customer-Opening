@@ -2,22 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 import Login from './Login/Login';
 import Form from './Form/Form';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
+// import {useLocation} from 'react-router-dom'
+import { useEffect } from 'react';
+import RoutesComponent from './Routes/Routes';
 
 function App() {
+
+
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/form' element={<Form/>} />
-        </Routes>
-      </Router>
+      <RoutesComponent />
       {/* <Login /> */}
       {/* <Form /> */}
     </div>

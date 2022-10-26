@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Modal from "../Modal/Modal";
 import style from "./Form.module.css";
 // import HistoryEduSharpIcon from '@mui/icons-material/HistoryEduSharp';
 // import VerifiedSharpIcon from '@mui/icons-material/VerifiedSharp';
 // import ThumbDownAltSharpIcon from '@mui/icons-material/ThumbDownAltSharp';
-
+import {useNavigate} from 'react-router-dom'
+import { isAuthenticated } from "../Helpers/helpers";
 function Form() {
+
+    const [open, setopen] = useState(false)
+    const navigate = useNavigate()
+    const handleHistory = () => {
+        setopen(true)
+    }
+
+    useEffect(() => {
+        console.log("dfsfa")
+        if(!isAuthenticated()){
+            navigate("/")
+        }
+    },[1])
+
   return (
     <div className={style.mainContainer}>
       <div className={style.colClass}>
@@ -13,9 +29,9 @@ function Form() {
         </div>
         <div className={style.navBar}>
           <ul>
-            <li>View History</li>
-            <li>Approve</li>
-            <li>  Reject</li>
+            <li className={style.history} onClick={handleHistory} ><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/programming-script-503834.png" alt="history image" />View History</li>
+            <li className={style.history}><img src="https://www.pinpng.com/pngs/m/36-361656_green-light-tick-mark-png-transparent-png.png" alt='approve' />Approve</li>
+            <li className={style.history}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS332PnDkUJ2Fu9wDOIGVuk5npuRbWYiTtxlr_sFvGnBu72XucJsPaH8nvOjZKlXcpKHp8&usqp=CAU" alt="reject" />  Reject</li>
           </ul>
         </div>
         <div className={style.firstRow}>
@@ -76,7 +92,7 @@ function Form() {
               <p>Attechments</p>
             </div>
             <div className={style.btnAttechment}>
-            <button>Upload Documents</button>
+            <button disabled>Upload Documents</button>
             <button>View Attechments</button>
             </div>
           </div>
@@ -338,6 +354,13 @@ function Form() {
           </div>
         </div>
       </div>
+      {
+        open 
+        ?
+        <Modal setopen={setopen} />
+        :
+        null
+      }
     </div>
   );
 }

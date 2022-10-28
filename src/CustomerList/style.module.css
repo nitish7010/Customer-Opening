@@ -1,0 +1,69 @@
+.container {
+  height: 100vh;
+  text-align: left;
+  padding-top: 1.5%;
+  background-color: rgb(198 215 233);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+}
+
+.header {
+  display: flex;
+  background-color: rgb(124 180 223 / 71%);
+  border: 1px solid rgba(141, 194, 234, 0.712);
+}
+
+.header h1 {
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+}
+
+.accountImage {
+  width: 50px;
+  height: 43px;
+}
+
+.accountList {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  width: 98%;
+  padding: 0;
+  margin: 0;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.5px solid rgb(124 180 223 / 71%);
+}
+
+thead {
+  /* border: 1px solid  */
+  border: 0.5px solid rgb(124 180 223 / 71%);
+}
+
+th {
+  font-size: 0.7rem;
+  padding: 0;
+  margin: 0;
+  height: 30px;
+}
+
+.accountList th {
+  border: 1px solid rgb(108 162 208);
+}
+
+.sno{
+    background-color: burlywood;
+}
+
+.formcol{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.formcol:hover{
+    color: blue;
+}

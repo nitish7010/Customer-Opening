@@ -18,7 +18,7 @@ function Login() {
             console.log(res)
             if(res.status === 200){
                 localStorage.setItem("auth",JSON.stringify(res.data.data?.token))
-                navigate("/form")
+                navigate("/list")
             }
         } catch (error) {
             console.log(error)

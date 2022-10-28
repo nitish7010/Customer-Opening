@@ -10,6 +10,7 @@ import { isAuthenticated } from '../Helpers/helpers';
 import Login from '../Login/Login';
 import PrivateRoutes from './PrivateRoutes';
 import {useNavigate} from 'react-router-dom'
+import CustomerList from '../CustomerList/CustomerList';
 
 function RoutesComponent() {
     console.log(isAuthenticated())
@@ -19,6 +20,7 @@ function RoutesComponent() {
     <Router>
     <Routes>
       <Route path='/' element={<Login />} />
+      <Route path='/list' element = {<CustomerList />} />
       <Route 
         path={'/form'}
         element= {<Form />}

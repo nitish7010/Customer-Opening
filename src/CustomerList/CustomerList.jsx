@@ -14,9 +14,8 @@ function CustomerList() {
                 method:"GET",
                 url:"/api/approval/list"
             })
-            console.log(data.data.data)
             if(data.data){
-                setData(data.data.data)
+                setData(data.data?.data)
             }
             return data
         } catch (error) {
@@ -28,14 +27,32 @@ function CustomerList() {
          getListData()
     },[1])
 
-    const handleForm = () => {
-        navigate("/form")
+    const handleForm = (requestId, requestDate) => {
+        const setDate = (date) => {
+            const ms = date
+              .replace("/", "")
+              .replace("/", "")
+              .replace("Date", "")
+              .replace("(", "")
+              .replace(")", "");
+            const d = new Date(+ms);
+            const finalDate = d
+              .toISOString()
+              .split("T")[0]
+              .split("-")
+              .reverse()
+              .join(".");
+            return finalDate;
+          };
+    
+          let date = setDate(requestDate)
+        navigate(`/form/${requestId}/${(new Date(date.replaceAll('.','-'))).getFullYear()}`)
     }
 
   return (
     <div className={style.container}>
         <div className={style.header}>
-            <img className={style.accountImage} src="https://img1.pnghut.com/3/8/14/BdbkMiE9YZ/credit-card-merchant-user-logo-symbol.jpg" alt='account image' /><h1>Pending Customer Account Opening List</h1>
+            <img className={style.accountImage} src="https://img1.pnghut.com/3/8/14/BdbkMiE9YZ/credit-card-merchant-user-logo-symbol.jpg" alt='account image' /><h1>Customer Account Opening List</h1>
         </div>
         <div className={style.accountList}>
             <table>
@@ -63,7 +80,7 @@ function CustomerList() {
                         data.map((x,i) => {
                             return <tr>
                                     <td className={style.sno} key={Math.random()}>{x.Sno}</td>
-                                    <td className={style.formcol} onClick={handleForm} key={Math.random()}>{x.RequestId}</td>
+                                    <td className={style.formcol} onClick={() => handleForm(x.RequestId,x.Erdat)} key={Math.random()}>{x.RequestId}</td>
                                     <td key={Math.random()}>{x.Erdat}</td>
                                     <td key={Math.random()}>{x.Ernam}</td>
                                     <td key={Math.random()}>{x.Am}</td>
@@ -76,6 +93,7 @@ function CustomerList() {
                                     <td key={Math.random()}>{x.RomErdat}</td>
                                     <td key={Math.random()}>{x.Hosa}</td>
                                     <td key={Math.random()}>{x.HosaErdat}</td>
+                                    {/* {console.log} */}
                             </tr>
                         })
                         :

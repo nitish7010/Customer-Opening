@@ -22,7 +22,7 @@ function RoutesComponent() {
       <Route path='/' element={<Login />} />
       <Route path='/list' element = {<CustomerList />} />
       <Route 
-        path={'/form'}
+        path={'/form/:id/:date'}
         element= {<Form />}
         />
     </Routes>

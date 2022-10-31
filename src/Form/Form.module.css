@@ -20,7 +20,17 @@
   margin: 0;
   padding: 0;
   text-align: left;
-  margin-left: 40px;
+  margin-left: 60px;
+}
+
+
+.backButton{
+  height: 30px;
+  width: 35px;
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  cursor: pointer;
 }
 
 .navBar {
@@ -493,7 +503,7 @@ hr{
 .table{
     overflow: scroll;
     width: 70%;
-    height: 60%;
+    height: 80%;
     padding-left: 2%;
 }
 
@@ -519,31 +529,11 @@ input{
     height: 22px;
 }
 
-root {
-  --lighterBlue: rgb(247, 249, 251);
-  --lightBlue: rgb(226, 238, 255);
-  --darkBlue: rgba(141, 194, 234, 0.712);
-  --darkerBlue: rgba(85, 139, 216, 0.3);
-  --darkestBlue: rgb(13, 60, 125);
-  --mediumgrey: #c4c4c5;
-  --fieldBorder: 2px inset var(--mediumgrey);
-  --fieldBorderBottom: 1px solid var(--mediumgrey);
-  --sectionBorder: 1px solid var(--darkerBlue);
-  --yellowButton: linear-gradient(
-    rgb(249, 249, 210) 0%,
-    rgb(255, 255, 122) 100%
-  );
-  --yellowButtonClicked: linear-gradient(
-    rgb(255, 255, 122) 0%,
-    rgba(211, 209, 209, 0.807) 100%
-  );
-  --yellowButtonDisabled: linear-gradient(
-    rgba(249, 249, 210, 0.5) 0%,
-    rgba(255, 255, 122, 0.5) 8%,
-    rgba(255, 255, 122, 0.5) 100%
-  );
-  --buttonBorder: 1px solid black;
-  --borderRadiusButton: 2.5px;
-  --borderRadiusTable: 2.5px 2.5px 0px 0px;
-  --borderRadiusSection: 2px 2px 0px 0px;
+.backButton{
+  height: 30px;
+  width: 35px;
+  position: absolute;
+  left: 10px;
+  top: 9px;
 }
+

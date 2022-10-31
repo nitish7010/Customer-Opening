@@ -6,6 +6,9 @@ import style from "./Form.module.css";
 // import ThumbDownAltSharpIcon from '@mui/icons-material/ThumbDownAltSharp';
 import { useNavigate } from "react-router-dom";
 import { isAuthenticated } from "../Helpers/helpers";
+import { useParams } from "react-router-dom";
+import instance from "../Helpers/Axios";
+
 function Form() {
   const [form, setForm] = useState({
     accountGroup: "1",
@@ -15,54 +18,108 @@ function Form() {
     distributionChannel: "5",
     division: "6",
     withSAS: "7",
-    title:"8",
-    name1:"9",
-    street2:"10",
-    houseNo:"11",
-    street4:"12",
-    district:"13",
-    postalCode:"14",
-    co:"15",
-    street3:"16",
-    country:"17",
-    region:"18",
-    street5:"19",
-    differentCity:"20",
-    telephone:"21",
-    telebox:"22",
-    mobilePhone:"23",
-    fax:"24",
-    email:"25",
-    taxNumber:"26",
-    latitude:"27",
-    longitude:"28",
-    customerClass:"29",
-    town:"30",
-    regionalMarket:"31",
-    hierarchyAssignment:"32",
-    priceGroup:"33",
-    customerGroup:"34",
-    priceList:"35",
-    custPriceProc:"36",
-    shopingConditions:"37",
-    custStateGro:"38",
-    deliveringPlant:"39",
-    rebate:"40",
-    incoterms1:"41",
-    termsOfPayment:"42",
-    status:"43",
-    pan:"44",
-    reconAccount:"45",
-    termsOfPayment2:"46",
+    title: "8",
+    name1: "9",
+    street2: "10",
+    houseNo: "11",
+    street4: "12",
+    district: "13",
+    postalCode: "14",
+    co: "15",
+    street3: "16",
+    country: "17",
+    region: "18",
+    street5: "19",
+    differentCity: "20",
+    telephone: "21",
+    telebox: "22",
+    mobilePhone: "23",
+    fax: "24",
+    email: "25",
+    taxNumber: "26",
+    latitude: "27",
+    longitude: "28",
+    customerClass: "29",
+    town: "30",
+    regionalMarket: "31",
+    hierarchyAssignment: "32",
+    priceGroup: "33",
+    customerGroup: "34",
+    priceList: "35",
+    custPriceProc: "36",
+    shopingConditions: "37",
+    custStateGro: "38",
+    deliveringPlant: "39",
+    rebate: "40",
+    incoterms1: "41",
+    termsOfPayment: "42",
+    status: "43",
+    pan: "44",
+    reconAccount: "45",
+    termsOfPayment2: "46",
   });
   const [open, setopen] = useState(false);
+  const [tableData, settableData] = useState([])
   const navigate = useNavigate();
+  const params = useParams();
+  const { id, date } = params;
   const handleHistory = () => {
     setopen(true);
   };
 
+  const getFormData = async (id, date) => {
+    try {
+      const data = await instance({
+        method: "GET",
+        url: `/api/approval/form-data?id=${id}&date=${date}`,
+      });
+      if (data.data) {
+        setForm(data.data?.data[0]);
+      }
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getFormTable = async (id) => {
+    try {
+      const data = await instance({
+        method: "GET",
+        url: `/api/approval/form-table?id=${id}`,
+      });
+      if (data.data) {
+        const setDate = (date) => {
+          const ms = date
+            .replace("/", "")
+            .replace("/", "")
+            .replace("Date", "")
+            .replace("(", "")
+            .replace(")", "");
+          const d = new Date(+ms);
+          const finalDate = d
+            .toISOString()
+            .split("T")[0]
+            .split("-")
+            .reverse()
+            .join(".");
+          return finalDate;
+        };
+        let temp = data.data?.data?.map(x => {return {...x, WtAgtdf:setDate(x.WtAgtdf),WtAgtdt:setDate(x.WtAgtdt)}})
+        settableData(temp);
+      }
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
-    console.log("dfsfa");
+    getFormData(id, date);
+    getFormTable(id)
+  }, [id]);
+
+  useEffect(() => {
     if (!isAuthenticated()) {
       navigate("/");
     }
@@ -120,8 +177,14 @@ function Form() {
   return (
     <div className={style.mainContainer}>
       <div className={style.colClass}>
+        <img
+          className={style.backButton}
+          onClick={() => navigate("/list")}
+          src="https://pic.onlinewebfonts.com/svg/img_70890.png"
+          alt="Back-image"
+        />
         <div className={style.header}>
-          <h1>Customer Account Opening</h1>
+          <h1> Customer Account Opening</h1>
         </div>
         <div className={style.navBar}>
           <ul>
@@ -191,7 +254,7 @@ function Form() {
                 </div>
                 <div className={style.inputLabel}>
                   <label>With SAS</label>
-                  <input value={withSAS}/>
+                  <input value={withSAS} />
                 </div>
                 {/* <div>
                 <label>Account Group</label>
@@ -237,7 +300,7 @@ function Form() {
 
               <div className={style.inputLabel}>
                 <label>Street 4</label>
-                <input value={street4}/>
+                <input value={street4} />
               </div>
 
               <div className={style.inputLabel}>
@@ -396,7 +459,7 @@ function Form() {
             </div>
             <div>
               <label>Incoterms1</label>
-              <input value={incoterms1}/>
+              <input value={incoterms1} />
             </div>
             <div>
               <label>Terms of payment</label>
@@ -454,13 +517,21 @@ function Form() {
                   <th>AGTTD</th>
                   <th>WT WTSTCD</th>
                 </tr>
-                <tr>
-                  <td>A3</td>
-                  <td></td>
-                  <td>01.01.1900</td>
-                  <td>31.12.9999</td>
-                  <td>OT</td>
-                </tr>
+                {
+                  tableData.length ? 
+
+                  tableData.map(x => {
+                    return <tr>
+                      <td>{x.Witht}</td>
+                      <td></td>
+                      <td>{x.WtAgtdf}</td>
+                      <td>{x.WtAgtdt}</td>
+                      <td>{x.WtWtstcd}</td>
+                    </tr>
+                  }) 
+                  :
+                  <tr>No Data</tr>
+                }
               </table>
             </div>
           </div>

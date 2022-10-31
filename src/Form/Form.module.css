@@ -20,7 +20,7 @@
   margin: 0;
   padding: 0;
   text-align: left;
-  margin-left: 60px;
+  margin-left: 65px;
 }
 
 
@@ -530,10 +530,10 @@ input{
 }
 
 .backButton{
-  height: 30px;
+  height: 25px;
   width: 35px;
   position: absolute;
-  left: 10px;
-  top: 9px;
+  left: 15px;
+  top: 12px;
 }
 

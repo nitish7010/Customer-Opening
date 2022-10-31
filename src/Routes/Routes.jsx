@@ -6,18 +6,22 @@ import {
   Link
 } from "react-router-dom";
 import Form from '../Form/Form';
-import { isAuthenticated } from '../Helpers/helpers';
 import Login from '../Login/Login';
-import PrivateRoutes from './PrivateRoutes';
 import {useNavigate} from 'react-router-dom'
 import CustomerList from '../CustomerList/CustomerList';
 
 function RoutesComponent() {
-    console.log(isAuthenticated())
+    let navigate = useNavigate()
+
+    useEffect(() => {
+      const auth = localStorage.getItem("auth")
+      if (!auth) {
+        navigate("/")
+      }
+    },[])
+
 
   return (
-    <div>
-    <Router>
     <Routes>
       <Route path='/' element={<Login />} />
       <Route path='/list' element = {<CustomerList />} />
@@ -26,7 +30,6 @@ function RoutesComponent() {
         element= {<Form />}
         />
     </Routes>
-  </Router></div>
   )
 }
 
